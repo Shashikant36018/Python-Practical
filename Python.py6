@@ -1,0 +1,19 @@
+def swap_first_n_chars(str1, str2, n):
+    if n > len(str1) or n > len(str2):
+        print("Error: 'n' is larger than the length of one or both strings.")
+        return str1, str2
+    
+    new_str1 = str2[:n] + str1[n:]
+    new_str2 = str1[:n] + str2[n:]
+    
+    print("After swapping:")
+    print("String 1:", new_str1)
+    print("String 2:", new_str2)
+    
+    return new_str1, new_str2
+
+string1 = input("Enter the first string: ")
+string2 = input("Enter the second string: ")
+n = int(input("Enter the number of characters to swap: "))
+
+swap_first_n_chars(string1, string2, n)
