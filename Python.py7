@@ -1,0 +1,26 @@
+def find_substring_indices(main_string, substring):
+    indices = []
+    start = 0
+    
+    while start < len(main_string):
+        index = main_string.find(substring, start)
+        
+        if index != -1:
+            indices.append(index)
+            start = index + 1
+        else:
+            break
+    
+    if not indices:
+        return -1
+    return indices
+
+main_string = input("Enter the main string: ")
+substring = input("Enter the substring to search for: ")
+
+result = find_substring_indices(main_string, substring)
+
+if result == -1:
+    print("Substring not found.")
+else:
+    print("Indices of substring occurrences:", result)
