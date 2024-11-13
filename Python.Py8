@@ -1,0 +1,14 @@
+def cube_of_even_integers_loop(input_list):
+    even_cubes = []
+    for num in input_list:
+        if isinstance(num, int) and num % 2 == 0:  # Check if it's an even integer
+            even_cubes.append(num ** 3)
+    return even_cubes
+
+def cube_of_even_integers_comprehension(input_list):
+    even_cubes = [num ** 3 for num in input_list if isinstance(num, int) and num % 2 == 0]
+    return even_cubes
+
+input_list = [int(x) for x in input("Enter a list of numbers separated by spaces: ").split()] 
+print("Cubes of even integers using 'for' loop:", cube_of_even_integers_loop(input_list))
+print("Cubes of even integers using list comprehension:", cube_of_even_integers_comprehension(input_list))
