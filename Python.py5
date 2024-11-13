@@ -1,0 +1,19 @@
+def string_operations(input_string, char_to_find, char_to_replace, char_to_remove):
+    frequency = input_string.count(char_to_find)
+    print(f"The frequency of '{char_to_find}' in the string is: {frequency}")
+    
+    replaced_string = input_string.replace(char_to_find, char_to_replace)
+    print(f"String after replacing '{char_to_find}' with '{char_to_replace}': {replaced_string}")
+    
+    first_removed = input_string.replace(char_to_find, '', 1)  # The '1' limits it to the first occurrence
+    print(f"String after removing the first occurrence of '{char_to_find}': {first_removed}")
+    
+    all_removed = input_string.replace(char_to_find, '')
+    print(f"String after removing all occurrences of '{char_to_find}': {all_removed}")
+
+input_string = input("Enter a string: ")
+char_to_find = input("Enter the character to find: ")
+char_to_replace = input("Enter the character to replace with: ")
+char_to_remove = input("Enter the character to remove: ")
+
+string_operations(input_string, char_to_find, char_to_replace, char_to_remove)
