@@ -1,0 +1,37 @@
+def file_statistics(file_path):
+    char_frequency = {}
+
+    total_characters = 0
+    total_words = 0
+    total_lines = 0
+    words_list = []                                                             
+    with open(file_path, 'r') as file:
+
+        for line in file:
+            total_lines += 1
+            
+            for char in line:
+                total_characters += 1
+                if char in char_frequency:
+                    char_frequency[char] += 1
+                else:
+                    char_frequency[char] = 1
+            
+            words = line.split()
+            total_words += len(words)
+            words_list.extend(words)
+
+    print("Total characters:", total_characters)
+    print("Total words:", total_words)
+    print("Total lines:", total_lines)
+    
+    print("\nCharacter frequency:")
+    for char, freq in char_frequency.items():
+        print(f"'{char}': {freq}")
+    
+    print("\nWords in reverse order:")
+    print(" ".join(words_list[::-1]))
+
+file_path = input("Enter the file path: ")
+
+file_statistics(file_path)
